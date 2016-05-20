@@ -11,6 +11,7 @@ sudo apt-get install iftop
 sudo apt-get install htop
 sudo apt-get install git
 sudo apt-get install curl
+sudo apt-get install links
 
 echo "do you want to setup chromium? [y,n]"
 read choice
