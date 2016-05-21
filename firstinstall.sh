@@ -15,13 +15,13 @@ sudo apt-get install links
 sudo apt-get install vim
 sudo apt-get install pyhton-pip
 
-echo "do you want to setup chromium? [y,n]"
+echo "do you want to setup chromium? [y,N]"
 read choice
 test "$choice" = 'y' && (
 	sudo apt-get install chromium-browser;
 	exit 1)
 
-echo "do you want to setup java? (openjdk 8 & oracle jdk 8) [y,n]"
+echo "do you want to setup java? (openjdk 8 & oracle jdk 8) [y,N]"
 read choice
 test "$choice" = 'y' && (
 	sudo apt-get install openjdk-8-jdk;
@@ -31,7 +31,7 @@ test "$choice" = 'y' && (
 	sudo apt-get install oracle-java8-installer;
 	exit 1)
 
-echo "do you want to setup zsh with ohmyzsh?[y,n]"
+echo "do you want to setup zsh with ohmyzsh?[y,N]"
 read choice
 test "$choice" = 'y' && (
 	sudo apt-get install zsh;
@@ -55,13 +55,7 @@ test "$choice" = 'y' && (
 	cp zshrc ~/.zshrc;
 	exit 1)
 
-echo "do you want to generate a ssh key?[y,n]"
-read choice
-test "$choice" = 'y' && (
-	ssh-keygen -t rsa; 
-	exit 1)
-
-echo "do you want to setup spotify?[y,n]"
+echo "do you want to setup spotify?[y,N]"
 read choice
 test "$choice" = 'y' && (
 	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
@@ -70,7 +64,14 @@ test "$choice" = 'y' && (
 	sudo apt-get install spotify-client;
 	exit 1)
 
-echo "do you want to setup private internet access vpn?[y,n]"
+echo "do you want to generate a ssh key?[y,N]"
+read choice
+test "$choice" = 'y' && (
+        ssh-keygen -t rsa; 
+        exit 1)
+
+
+echo "do you want to setup private internet access vpn?[y,N]"
 read choice
 test "$choice" = 'y' && (
 	wget https://www.privateinternetaccess.com/installer/install_ubuntu.sh -P /tmp;
