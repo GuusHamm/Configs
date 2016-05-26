@@ -64,6 +64,14 @@ test "$choice" = 'y' && (
 	sudo apt-get install spotify-client;
 	exit 1)
 
+echo "do you want to setup steam?[y,N]"
+read choice
+test "$choice" = 'y' && (
+	wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+	sudo dpkg -i steam.deb
+        exit 1)
+
+
 echo "do you want to generate a ssh key?[y,N]"
 read choice
 test "$choice" = 'y' && (
